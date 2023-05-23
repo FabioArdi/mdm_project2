@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Style Transfer</title>
+</head>
+<body>
+    <h1>Style Transfer</h1>
+    <form id="styleTransferForm" enctype="multipart/form-data">
+        <input type="file" name="file" id="fileInput">
+        <select id="artistSelect">
+            <option value="CEZANNE">Cezanne</option>
+            <option value="MONET">Monet</option>
+            <option value="UKIYOE">Ukiyoe</option>
+            <option value="VANGOGH">Van Gogh</option>
+        </select>
+        <button type="submit">Transfer Style</button>
+    </form>
+
+    <div id="outputImage"></div>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
