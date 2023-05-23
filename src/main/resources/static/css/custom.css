@@ -1,29 +1,65 @@
+body {
+    background-color: #426384;
+}
+
+.bg-light-gray {
+    background-color: #426384;
+}
+
+.card {
+    max-width: 400px;
+}
+
+.card-body {
+    text-align: center;
+    padding: 20px;
+}
+
+#outputContainer {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust the top margin as needed */
+    margin-bottom: 20px; /* Adjust the bottom margin as needed */
+}
+
+#outputImage img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px; /* Adjust the top margin as needed */
+    margin-bottom: auto /* Adjust the bottom margin as needed */
+}
+
+.card-header,
+.card-body {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.input-group-prepend {
+    height: 38px;
+}
+
+.input-group-text {
+    background-color: #52575c;
+    border-color: #52575c;
+    color: #fff;
+}
+
+.form-control {
+    background-color: #52575c;
+    border-color: #52575c;
+    color: #fff;
+}
+
 .button--loading::after {
-    content: "";
-    position: absolute; 
-    width: 16px;
-    height: 16px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    border: 4px solid transparent;
     border-top-color: #ffffff;
-    border-radius: 50%;
-    animation: button-loading-spinner 1s ease infinite;
-}
-
-@keyframes button-loading-spinner {
-    from {
-        transform: rotate(0turn);
-    }
-
-    to {
-        transform: rotate(1turn);
-    }
-}
-
-.fix-width {
-    width: 150px;
 }

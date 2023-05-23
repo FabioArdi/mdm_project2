@@ -2,21 +2,41 @@
 <html>
 <head>
     <title>Style Transfer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
 </head>
 <body>
-    <h1>Style Transfer</h1>
-    <form id="styleTransferForm" enctype="multipart/form-data">
-        <input type="file" name="file" id="fileInput">
-        <select id="artistSelect">
-            <option value="CEZANNE">Cezanne</option>
-            <option value="MONET">Monet</option>
-            <option value="UKIYOE">Ukiyoe</option>
-            <option value="VANGOGH">Van Gogh</option>
-        </select>
-        <button type="submit">Transfer Style</button>
-    </form>
-
-    <div id="outputImage"></div>
+    <div class="container d-flex justify-content-center align-items-center vh-100 bg-light-gray">
+        <div class="card bg-dark text-white">
+            <div class="card-header text-center">
+                <h1>Style Transfer</h1>
+            </div>
+            <div class="card-body">
+                <form id="styleTransferForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="fileInput">Choose an image:</label>
+                        <input type="file" name="file" id="fileInput" class="form-control-file">
+                    </div>
+                    <div class="form-group">
+                        <label for="artistSelect">Select an artist:</label>
+                        <select id="artistSelect" class="form-control">
+                            <option value="CEZANNE">Cezanne</option>
+                            <option value="MONET">Monet</option>
+                            <option value="UKIYOE">Ukiyoe</option>
+                            <option value="VANGOGH">Van Gogh</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block button--loading">
+                        <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                        Transfer Style
+                    </button>
+                </form>
+                <div id="outputContainer">
+                    <div id="outputImage"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="/js/script.js"></script>
 </body>
