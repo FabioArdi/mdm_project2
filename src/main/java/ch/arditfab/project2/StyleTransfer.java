@@ -63,7 +63,11 @@ public final class StyleTransfer {
         Files.createDirectories(outputPath);
         Path imagePath = outputPath.resolve(filename + "_" + name + ".png");
         image.save(Files.newOutputStream(imagePath), "png");
-        return "/build/output/" + filename + "_" + name + ".png";
+        return "build/output/" + filename + "_" + name + ".png";
+    }
+
+    public static String base64Encode(Image image) throws IOException {
+        return image.toNDArray();
     }
 }
 
