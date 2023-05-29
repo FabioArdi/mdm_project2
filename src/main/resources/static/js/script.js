@@ -23,7 +23,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
         .then(response => response.text())
         .then(imagePath => {
             const imageUrl = imagePath;
-            outputImage.innerHTML = `<img src="${imageUrl}" alt="Transformed Image">`;
+            setTimeout(() => {
+                outputImage.innerHTML = `<img src="${imageUrl}" alt="Transformed Image">`;
+            }, 5000); // Wait for the image to be saved on the server))
         })
         .catch(error => {
             console.error('Error:', error);

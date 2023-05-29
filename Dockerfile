@@ -1,6 +1,6 @@
 FROM openjdk:17
 
-WORKDIR /
+WORKDIR /usr/src/app
 COPY . .
 
 EXPOSE 8080

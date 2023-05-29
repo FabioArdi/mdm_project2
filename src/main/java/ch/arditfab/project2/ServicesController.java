@@ -24,7 +24,7 @@ public class ServicesController {
 
     @GetMapping("/ping")
     public String ping() {
-        return "Sentiment app is up and running!";
+        return "StyleTransfer app is up and running!";
     }
 
     @PostMapping(value="/styletransfer", consumes = "multipart/form-data")
