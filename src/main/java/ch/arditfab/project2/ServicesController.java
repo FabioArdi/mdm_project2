@@ -33,8 +33,8 @@ public class ServicesController {
         String originalFilename = file.getOriginalFilename();
         String filenameWithoutExtension = originalFilename.substring(0, originalFilename.lastIndexOf('.'));
         Image output = StyleTransfer.transformImage(image, artist);
-        String imagepath = StyleTransfer.save(output, artist.toString(), "src/main/resources/static/build/output/", filenameWithoutExtension);
-        return imagepath;
+        String base64 = StyleTransfer.save(output, artist.toString(), "src/main/resources/static/build/output/", filenameWithoutExtension);
+        return base64;
     }
 
 }

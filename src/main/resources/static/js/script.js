@@ -20,12 +20,12 @@ window.addEventListener('DOMContentLoaded', (event) => {
             method: 'POST',
             body: formData
         })
-        .then(response => response.text())
+        .then(response => response.text()) 
         .then(imagePath => {
             const imageUrl = imagePath;
-            setTimeout(() => {
-                outputImage.innerHTML = `<img src="${imageUrl}" alt="Transformed Image">`;
-            }, 5000); // Wait for the image to be saved on the server))
+            console.log("test");
+            console.log(imageUrl);
+            outputImage.innerHTML = `<img src="data:image/png;base64,${imageUrl}" alt="Transformed Image">`;
         })
         .catch(error => {
             console.error('Error:', error);

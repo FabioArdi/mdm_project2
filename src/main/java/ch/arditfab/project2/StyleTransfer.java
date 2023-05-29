@@ -12,10 +12,12 @@ import ai.djl.repository.zoo.ZooModel;
 import ai.djl.training.util.ProgressBar;
 import ai.djl.translate.TranslateException;
 
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -63,11 +65,15 @@ public final class StyleTransfer {
         Files.createDirectories(outputPath);
         Path imagePath = outputPath.resolve(filename + "_" + name + ".png");
         image.save(Files.newOutputStream(imagePath), "png");
-        return "build/output/" + filename + "_" + name + ".png";
+        RandomAccessFile f = new RandomAccessFile(imagePath.toString(), "r");
+        byte[] bytes = new byte[(int) f.length()];
+        f.read(bytes);
+        f.close();
+        return new String(Base64.encodeBase64(bytes, false));
     }
-
+/*
     public static String base64Encode(Image image) throws IOException {
         return image.toNDArray();
-    }
+    }*/
 }
 
